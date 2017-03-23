@@ -1,2 +1,2 @@
 # mlandrewngcourse
-this is all practice for andrew ng machine learning course
+this is all practices for andrew ng machine learning course using octave to implement.
