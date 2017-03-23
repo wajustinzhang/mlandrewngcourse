@@ -27,7 +27,6 @@ X = [ones(m, 1) X];
 Za = Theta1 * X';
 A = sigmoid(Za);
 
-asize = size(A, 1);
 A = [ones(1,  size(A(1,:))(2)); A];
 % compute the output
 Zo = Theta2 * A;
