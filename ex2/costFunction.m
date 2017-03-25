@@ -23,10 +23,10 @@ grad = zeros(size(theta));
 % get J(theta)
 sum = 0;
 for i = 1:m
-  hi = 1 / ( 1 + exp (-(theta' * X(i,:)')));
+  hi = sigmoid(theta' * X(i,:)');
   sum = sum + y(i) * log(hi) + (1-y(i))*log(1-hi);
   
-  grad = ( grad + (hi - y(i)) * X(i, :)');  
+  grad = grad + (hi - y(i)) * X(i, :)';  
 end
 grad = (1/m) * grad;
 J = -(1/m) * sum; 

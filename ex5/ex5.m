@@ -104,7 +104,7 @@ pause;
 %                 see a graph with "high bias" -- Figure 3 in ex5.pdf 
 %
 
-lambda = 0;
+lambda = 1;
 [error_train, error_val] = ...
     learningCurve([ones(m, 1) X], y, ...
                   [ones(size(Xval, 1), 1) Xval], yval, ...
@@ -167,7 +167,7 @@ pause;
 %  lambda to see how the fit and learning curve change.
 %
 
-lambda = 5;
+lambda = 2.2;
 [theta] = trainLinearReg(X_poly, y, lambda);
 
 % Plot training data and fit

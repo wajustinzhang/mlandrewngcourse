@@ -109,6 +109,7 @@ J = -(1/m) * mainP  + reg;
 
 D1 = 0; D2 = 0;
 for i=1:m
+  %feed-forward propagation
   a1 = X(i,:)'; %401 x 1
   
   %hidden layer
@@ -118,6 +119,7 @@ for i=1:m
   z3 = Theta2 * a2; % 10 x 1
   a3 = sigmoid(z3); %this is hi, 10x1 
   
+  %backward propagation
   delta3 = a3 - Y(i,:)'; % 10 x 1
   delta2 = (Theta2'(2:end, :) * delta3) .* sigmoidGradient(z2); % 25 *1
   
@@ -133,6 +135,6 @@ Theta2_grad(:,2:end) = (1/m)*D2(:,2:end) + (lambda/m) * Theta2(:,2:end);
 
 %Theta2_grad = (1/m)*D2 + (lambda/m) * Theta2(:,2:end);
 % Unroll gradients
-grad = [Theta1_grad(:) ; Theta2_grad(:)];
+grad = [Theta1_grad(:); Theta2_grad(:)];
 
 end
